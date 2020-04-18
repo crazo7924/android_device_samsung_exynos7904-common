@@ -1,0 +1,15 @@
+#
+# Copyright (C) 2020 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# getevent /dev/input/event14: 0001 0072 00000001 -> vol-
+#
+# This is the power button. Convert 0x74 hex to decimal and
+# add it here to a file you name after the 'name' of the
+# device.
+#
+
+key 114   VOLUME_DOWN
+key 115   VOLUME_UP
+key 116   POWER

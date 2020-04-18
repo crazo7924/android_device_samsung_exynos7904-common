@@ -1,0 +1,21 @@
+# kernel.te
+
+# Allow cpu hotplugging to work
+allow kernel self:capability { sys_admin };
+
+allow kernel self:capability { mknod };
+
+# Allow to create dirs in /dev (devtmpfs)
+allow kernel device:dir rw_dir_perms;
+# neverallow rule
+dontaudit kernel device:file { create };
+
+# /efs/FactoryApp/gyro_cal_data
+allow kernel efs_file:dir r_dir_perms;
+allow kernel app_efs_file:dir r_dir_perms;
+allow kernel app_efs_file:file rw_file_perms;
+
+# /sys/devices/virtual/sec/sec_key/hall_detect
+allow kernel sysfs_sec_key:dir r_dir_perms;
+allow kernel sysfs_sec_key:file r_file_perms;
+allow kernel sysfs_sec_key:lnk_file r_file_perms;

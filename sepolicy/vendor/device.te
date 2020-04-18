@@ -1,0 +1,8 @@
+# device.te
+
+type geotrans_device, dev_type;
+type jsqz_device, dev_type;
+type m2m1shot_device, dev_type;
+type npu_device, dev_type;
+type secmem_device, dev_type;
+type vts_fio_device, dev_type;

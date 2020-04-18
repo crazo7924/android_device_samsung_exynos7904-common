@@ -1,0 +1,13 @@
+# system.prop for universal7885
+#
+ro.arch=exynos7904
+ro.kernel.qemu=0
+ro.kernel.qemu.gles=1
+persist.demo.hdmirotationlock=false
+#Enable S.LSI USB settings
+dev.usbsetting.embedded=on
+#RILD debug level setting
+ro.debug_level=0x494d
+#Phone early start enable flag
+sys.config.phone_start_early=true
+# end of system.prop

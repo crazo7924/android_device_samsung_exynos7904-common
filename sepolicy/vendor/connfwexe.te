@@ -1,0 +1,22 @@
+# connfwexe.te
+
+type connfwexe, domain, coredomain;
+type connfwexe_exec, exec_type, system_file_type, file_type;
+
+# connfwexe is started by init, type transit from init domain to connfwexe domain
+init_daemon_domain(connfwexe)
+
+allow connfwexe self:capability setuid;
+
+# /data/.consocket_stream
+allow connfwexe system_data_file:dir remove_name;
+file_type_auto_trans(connfwexe, system_data_file, connfwexe_socket)
+
+# /data/.tcpdump_stream
+allow connfwexe system_data_file:dir remove_name;
+allow connfwexe system_data_file:sock_file unlink;
+file_type_auto_trans(connfwexe, system_data_file, connfwexe_socket)
+
+# /data/.socket_stream
+allow connfwexe ddexe_socket:sock_file rw_file_perms;
+allow connfwexe ddexe:unix_stream_socket connectto;

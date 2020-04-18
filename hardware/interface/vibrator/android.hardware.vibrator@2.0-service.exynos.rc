@@ -1,0 +1,4 @@
+service vendor.vibrator-2-0 /vendor/bin/hw/android.hardware.vibrator@2.0-service.exynos
+    class hal
+    user system
+    group system

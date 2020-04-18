@@ -1,0 +1,59 @@
+# init.te
+
+# kmod="crypto-cts(cbc(aes))"
+allow init kernel:system module_request;
+
+# /efs
+allow init efs_file:dir { mounton };
+# /dqmdbg
+allow init dqmdbg_file:dir { mounton };
+# /keydata
+allow init keydata_data_file:dir { mounton };
+# /keyrfuge
+allow init keyrefuge_data_file:dir { mounton };
+
+# /mnt/vendor/efs
+allow init mnt_vendor_file:dir { mounton };
+
+### DEV
+# /dev/block/platform/13d60000.ufs/by-name/misc
+allow init misc_block_device:file rw_file_perms;
+
+# /dev/event-log-tags
+allow init runtime_event_log_tags_file:file { getattr };
+
+# /dev/tziwsock
+allow init tz_user_device:chr_file rw_file_perms;
+
+# /dev/socket/sap_uim_socket1
+allow init socket_device:sock_file { create setattr unlink };
+
+# /dev/socket/epic
+allow init epicd_socket:unix_dgram_socket { create bind };
+
+# /proc/sys/abi/swp
+allow init proc_abi:file { getattr };
+
+# /proc/sys/vm/extra_free_kbytes
+allow init proc_extra_free_kbytes:file { getattr };
+
+# /sys/kernel/sysrq
+allow init proc_sysrq:file { getattr };
+# /sys/kernel/panic_on_oops
+allow init proc_panic:file { getattr };
+# /sys/kernel/hung_task_timeout_secs
+allow init proc_hung_task:file { getattr };
+# /sys/kernel/sched*
+allow init proc_sched:file { getattr };
+
+allow init proc_dirty:file { getattr };
+allow init proc_hostname:file { getattr };
+
+# /sys/devices/platform/13d00000.dwmmc2/mmc_host/
+allow init sysfs_mmc_host:file { setattr };
+
+# /sys/devices/platform/13d60000.ufs/host0/
+allow init sysfs_scsi_host:file { setattr };
+
+# /sdcard
+allow init tmpfs:lnk_file { create };
