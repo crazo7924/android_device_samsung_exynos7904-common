@@ -65,7 +65,6 @@ BOARD_CUSTOM_DTBIMG_MK       := $(PLATFORM_PATH)/kernel/dtb.mk
 # Build a device tree overlay
 BOARD_KERNEL_SEPARATED_DTBO  := true
 BOARD_CUSTOM_DTBOIMG_MK      := $(PLATFORM_PATH)/kernel/dtbo.mk
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive  
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --header_version 1 --board SRPRL14A004RU
 
 ### BINDER
@@ -134,8 +133,8 @@ TARGET_LD_SHIM_LIBS += \
     /vendor/lib/libsensorlistener.so|libshim_sensorndkbridge.so
 
 ### SEPOLICY
-BOARD_SEPOLICY_TEE_FLAVOR := teegris
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
+# BOARD_SEPOLICY_TEE_FLAVOR := teegris
+# BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 
 ### PROPERTIES
 TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
@@ -160,9 +159,6 @@ BOARD_HOSTAPD_DRIVER := NL80211
 
 # external/wpa_supplicant_8/Android.mk
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
-
-# hardware/samsung/wifiloader/Android.mk
-WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/scsc_wlan/parameters/"
 
 WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 
