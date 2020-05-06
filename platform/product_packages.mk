@@ -37,6 +37,10 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-legacy \
     android.hardware.camera.provider@2.5-legacy
 
+# Snap
+PRODUCT_PACKAGES += \
+    Snap
+
 ### DOZE
 PRODUCT_PACKAGES += \
     SamsungDoze
