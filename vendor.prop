@@ -5,11 +5,6 @@ aaudio.mmap_exclusive_policy=2
 aaudio.hw_burst_min_usec=2000
 af.fast_track_multiplier=1
 
-### EDEN
-log.tag.EDEN=INFO
-ro.vendor.eden.devices=CPU1_GPU1_NPU1
-ro.vendor.eden.npu.version.path=/sys/devices/platform/npu@17800000/version
-
 ### DALVIK
 dalvik.vm.lockprof.threshold=500
 
@@ -39,11 +34,6 @@ debug.hwc.winupdate=1
 ### SURFACEFLINGER
 # Disable backpressure propagation
 debug.sf.disable_backpressure=1
-
-# Enable wide gamut and color management
-ro.surface_flinger.has_wide_color_display=true
-ro.surface_flinger.has_HDR_display=true
-ro.surface_flinger.use_color_management=true
 
 ### DEVELOPER SETTINGS
 # Disable invocation of oem_lock

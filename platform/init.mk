@@ -3,5 +3,4 @@ PRODUCT_PACKAGES += \
     skip_mount.exynos7904 \
     init.exynos7904 \
     init.exynos7904.root \
-    init.exynos7904.usb \
-    init.exynos7904.usb.configfs
+    init.exynos7904.usb

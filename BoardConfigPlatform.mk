@@ -55,8 +55,6 @@ TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/hardware/include
 
 ### KERNEL
 TARGET_KERNEL_SOURCE = kernel/samsung/exynos7904/
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := r353983c
 
 BOARD_KERNEL_BASE            := 0x10000000
 BOARD_KERNEL_PAGESIZE        := 2048
@@ -67,10 +65,7 @@ BOARD_CUSTOM_DTBIMG_MK       := $(PLATFORM_PATH)/kernel/dtb.mk
 # Build a device tree overlay
 BOARD_KERNEL_SEPARATED_DTBO  := true
 BOARD_CUSTOM_DTBOIMG_MK      := $(PLATFORM_PATH)/kernel/dtbo.mk
-
-# Temporary
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
-
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive  
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --header_version 1 --board SRPRL14A004RU
 
 ### BINDER
@@ -88,12 +83,22 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 AB_OTA_UPDATER := false
 
 BOARD_ROOT_EXTRA_FOLDERS := \
-    efs \
-    dqmdbg \
-    omr
+    efs
 
 BOARD_ROOT_EXTRA_SYMLINKS := \
     /mnt/vendor/efs:/efs/efs
+
+# Enable dex pre-opt to speed up initial boot
+ifeq ($(HOST_OS),linux)
+  ifeq ($(WITH_DEXPREOPT),)
+    WITH_DEXPREOPT := true
+    WITH_DEXPREOPT_PIC := true
+    ifneq ($(TARGET_BUILD_VARIANT),user)
+      # Retain classes.dex in APK's for non-user builds
+      DEX_PREOPT_DEFAULT := nostripping
+    endif
+  endif
+endif
 
 ### VENDOR
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -128,12 +133,9 @@ TARGET_LD_SHIM_LIBS += \
     /vendor/lib/vndk/libstagefright_omx_utils.so|libshim_stagefright_foundation.so \
     /vendor/lib/libsensorlistener.so|libshim_sensorndkbridge.so
 
-#TODO
 ### SEPOLICY
-# include device/lineage/sepolicy/exynos/sepolicy.mk
-# BOARD_SEPOLICY_TEE_FLAVOR := teegris
-# include device/samsung_slsi/sepolicy/sepolicy.mk
-# BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
+BOARD_SEPOLICY_TEE_FLAVOR := teegris
+BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 
 ### PROPERTIES
 TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
@@ -150,9 +152,11 @@ BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
 endif # BOARD_AVB_ENABLE
 
-# TODO: find out if this is works
 ### WIFI
 BOARD_HAVE_SAMSUNG_WIFI := true
+
+BOARD_WPA_SUPPLICANT_DRIVE := NL80211
+BOARD_HOSTAPD_DRIVER := NL80211
 
 # external/wpa_supplicant_8/Android.mk
 WPA_SUPPLICANT_VERSION           := VER_0_8_X

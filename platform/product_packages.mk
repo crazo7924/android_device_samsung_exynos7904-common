@@ -37,9 +37,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-legacy \
     android.hardware.camera.provider@2.5-legacy
 
-PRODUCT_PACKAGES += \
-    Snap
-
 ### DOZE
 PRODUCT_PACKAGES += \
     SamsungDoze
@@ -108,12 +105,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
-
-### NFC
-PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    NfcNci \
-    Tag
 
 ### OMX
 PRODUCT_PACKAGES += \

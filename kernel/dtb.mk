@@ -2,7 +2,7 @@
 
 MKDTBIMG   := $(HOST_OUT_EXECUTABLES)/mkdtimg$(HOST_EXECUTABLE_SUFFIX)
 KERNEL_OUT := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ
-DTB_DIR    := $(KERNEL_OUT)/arch/$(KERNEL_ARCH)/boot/dts/exynos
+DTB_DIR    := $(KERNEL_OUT)/arch/$(KERNEL_ARCH)/boot/dts/exynos/dtbo
 DTB_CFG    := $(PLATFORM_PATH)/kernel/$(TARGET_SOC).cfg
 
 define build-dtbimage-target

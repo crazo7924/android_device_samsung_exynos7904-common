@@ -1,3 +1,0 @@
-# hwservicemanager.te
-
-allow hwservicemanager runtime_event_log_tags_file:file { getattr };

@@ -1,4 +1,0 @@
-# system_app.te
-
-# /acct/tasks
-r_dir_file(system_app, cgroup)

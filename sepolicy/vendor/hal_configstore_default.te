@@ -1,4 +1,0 @@
-# hal_configstore_default.te
-
-# cgroup tasks
-allow hal_configstore_default cgroup:file getattr;
