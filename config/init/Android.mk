@@ -33,12 +33,3 @@ LOCAL_MODULE_STEM := skip_mount.cfg
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/init/config
 include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := init.exynos7904.root
-LOCAL_SRC_FILES := init.exynos7904.root.rc
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_STEM := init.exynos7904.root.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_ETC)/init/hw
-include $(BUILD_PREBUILT)
