@@ -1,7 +1,6 @@
 ### AUDIO
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
-    android.hardware.audio@5.0-impl \
     android.hardware.audio@2.0-service
 
 PRODUCT_PACKAGES += \
@@ -16,7 +15,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-impl \
-    android.hardware.audio.effect@5.0-impl
 
 ### BLUETOOTH
 PRODUCT_PACKAGES += \
@@ -53,7 +51,8 @@ PRODUCT_PACKAGES += \
 
 ### BIOMETRICS
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.face@1.0
+    android.hardware.biometrics.face@1.0 \
+    android.hardware.biometrics.fingerprint@2.1-service.samsung
 
 ### GATEKEEPER
 PRODUCT_PACKAGES += \
@@ -67,25 +66,16 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.2-impl \
-    android.hardware.graphics.composer@2.2-service \
-
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.graphics.mapper@2.0-impl-2.1
+    android.hardware.graphics.composer@2.1-service \
 
 ### HEALTH
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
-    android.hardware.health@2.0-service
+    android.hardware.health@2.0-service.samsung
 
 ### KEYMASTER
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung
-
-### LIGHT
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.samsung
 
 ### LIVEDISPLAY
 PRODUCT_PACKAGES += \
@@ -101,19 +91,8 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
 
-### NEURALNETWORKS
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.0 \
-    android.hardware.neuralnetworks@1.1 \
-    android.hardware.neuralnetworks@1.2
-
-PRODUCT_PACKAGES += \
-    libtextclassifier_hash.vendor
-
 ### OMX
 PRODUCT_PACKAGES += \
-    libOmxAacEnc \
-    libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
@@ -128,10 +107,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service.exynos7904
 
-### RENDERSCRIPT
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
-
 ### SENSORS
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.exynos7904 \
@@ -145,19 +120,10 @@ PRODUCT_PACKAGES += \
     libshim_stagefright_foundation \
     libshim_sensorndkbridge
 
-## SOUNDTRIGGER
-PRODUCT_PACKAGES += \
-    android.hardware.soundtrigger@2.2-impl \
-    android.hardware.soundtrigger@2.0-service
-
 ### THERMAL
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service
-
-### USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.1-service.exynos7904
 
 ### USB TRUST HAL
 PRODUCT_PACKAGES += \
@@ -165,7 +131,7 @@ PRODUCT_PACKAGES += \
 
 ### VIBRATOR
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@2.0-service.exynos
+    android.hardware.vibrator@1.0-service.exynos
 
 ### WIFI
 PRODUCT_PACKAGES += \
