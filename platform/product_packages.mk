@@ -1,6 +1,7 @@
 ### AUDIO
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
+    android.hardware.audio@4.0-impl \
     android.hardware.audio@2.0-service
 
 PRODUCT_PACKAGES += \
@@ -15,6 +16,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-impl \
+    android.hardware.audio@4.0-impl
 
 ### BLUETOOTH
 PRODUCT_PACKAGES += \
@@ -52,7 +54,7 @@ PRODUCT_PACKAGES += \
 ### BIOMETRICS
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.face@1.0 \
-    android.hardware.biometrics.fingerprint@2.1-service.samsung
+    android.hardware.biometrics.fingerprint@2.1-service
 
 ### GATEKEEPER
 PRODUCT_PACKAGES += \
@@ -75,7 +77,7 @@ PRODUCT_PACKAGES += \
 
 ### KEYMASTER
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0-service.samsung
+    android.hardware.keymaster@4.0-service
 
 ### LIVEDISPLAY
 PRODUCT_PACKAGES += \
@@ -124,6 +126,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service
+
+### USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.1-service.exynos7904
 
 ### USB TRUST HAL
 PRODUCT_PACKAGES += \
