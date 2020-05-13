@@ -70,7 +70,6 @@ Power::Power() {
     //android::base::SetMinimumLogSeverity(android::base::VERBOSE);
 
     mInteractionHandler.Init();
-    mEpic.Init();
     tsp_init();
 
     LOG(DEBUG) << "Looking for touchsceen/lcd nodes";
@@ -129,9 +128,6 @@ Return<void> Power::powerHint(PowerHint hint, int32_t data __unused) {
         mInteractionHandler.Acquire(data);
         break;
 #endif
-    case PowerHint::VIDEO_ENCODE:
-        mEpic.videoEncode(hint);
-        break;
     case PowerHint::LOW_POWER:
         LOG(DEBUG) << "PowerHint: LOW_POWER";
         break;
