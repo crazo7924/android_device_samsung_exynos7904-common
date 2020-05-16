@@ -1,0 +1,10 @@
+# vold.te
+
+# cgroup tasks
+allow vold cgroup:file { getattr };
+
+# /mnt/vendor
+allow vold mnt_vendor_file:dir r_dir_perms;
+
+# /sys/kernel/debug
+allow vold debugfs_trace_marker:file { getattr };

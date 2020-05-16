@@ -130,8 +130,8 @@ TARGET_LD_SHIM_LIBS += \
     /vendor/lib/libsensorlistener.so|libshim_sensorndkbridge.so
 
 ### SEPOLICY
-# BOARD_SEPOLICY_TEE_FLAVOR := teegris
-# BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
+BOARD_SEPOLICY_TEE_FLAVOR := teegris
+BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 
 ### PROPERTIES
 TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop

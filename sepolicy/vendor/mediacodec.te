@@ -1,0 +1,6 @@
+# mediacodec.te
+
+hal_client_domain(mediacodec, hal_power);
+
+# /dev/m2m1shot_scaler0
+allow mediacodec m2m1shot_device:chr_file rw_file_perms;

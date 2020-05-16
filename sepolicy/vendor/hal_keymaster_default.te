@@ -1,0 +1,4 @@
+# hal_keymaster_default.te
+
+# /mnt/vendor/efs
+allow hal_keymaster_default efs_file:dir search;

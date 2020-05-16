@@ -1,0 +1,8 @@
+# hal_power_default
+
+allow hal_power_default hal_miscpower_hwservice:hwservice_manager { add find };
+
+get_prop(hal_power_default, vendor_camera_prop)
+
+# /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;

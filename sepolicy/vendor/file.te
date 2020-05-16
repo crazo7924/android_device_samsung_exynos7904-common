@@ -1,0 +1,29 @@
+# file.te
+
+# DATA
+type camera_vendor_data_file, file_type, data_file_type;
+type display_vendor_data_file, file_type, data_file_type;
+type gk_vendor_data_file, file_type, data_file_type;
+type media_vendor_data_file, file_type, data_file_type;
+type mediadrm_vendor_data_file, file_type, data_file_type;
+
+# DEBUGFS
+type debugfs_mali, fs_type, debugfs_type;
+type debugfs_mali_mem, fs_type, debugfs_type;
+type debugfs_ion, fs_type, debugfs_type;
+type debugfs_ion_dma, fs_type, debugfs_type;
+type debugfs_ocp, fs_type, debugfs_type;
+
+# PROC
+type proc_extra, fs_type, proc_type;
+type proc_pwrsrc, fs_type, proc_type;
+type proc_reset_reason, fs_type, proc_type;
+type proc_swapiness, fs_type, proc_type;
+
+# ROOT
+# /omr
+type omr_file, file_type;
+
+# SOCKETS
+type connfwexe_socket, file_type, data_file_type, core_data_file_type, coredomain_socket;
+type ddexe_socket, file_type, data_file_type, core_data_file_type, coredomain_socket;

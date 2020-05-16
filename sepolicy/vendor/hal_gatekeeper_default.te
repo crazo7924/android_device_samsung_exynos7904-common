@@ -1,0 +1,4 @@
+# hal_gatekeeper_default.te
+
+# /acct/tasks
+allow hal_gatekeeper_default cgroup:file r_file_perms;
