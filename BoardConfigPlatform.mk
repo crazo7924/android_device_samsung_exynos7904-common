@@ -113,6 +113,9 @@ USE_XML_AUDIO_POLICY_CONF := 1
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/hardware/bluetooth
 BOARD_CUSTOM_BT_CONFIG := $(PLATFORM_PATH)/hardware/bluetooth/libbt_vndcfg.txt
 
+### CHARGER
+BOARD_CHARGER_ENABLE_SUSPEND := true
+
 ### GRAPHICS
 # hardware/interfaces/configstore/1.1/default/surfaceflinger.mk
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -130,7 +133,10 @@ TARGET_LD_SHIM_LIBS += \
     /vendor/lib/libsensorlistener.so|libshim_sensorndkbridge.so
 
 ### SEPOLICY
+include device/lineage/sepolicy/exynos/sepolicy.mk
+
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
+include device/samsung_slsi/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 
 ### PROPERTIES
