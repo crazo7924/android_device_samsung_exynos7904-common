@@ -9,5 +9,9 @@ init_daemon_domain(cassd)
 # /dev/kmsg
 allow cassd kmsg_device:chr_file r_file_perms;
 
+# /dev/umts_boot0
+# /dev/umts_cass
+allow cassd vendor_radio_device:chr_file rw_file_perms;
+
 # /sys/power/wake_lock
 allow cassd sysfs_wake_lock:file rw_file_perms;

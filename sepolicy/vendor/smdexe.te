@@ -19,5 +19,8 @@ allow smdexe system_data_file:dir rw_dir_perms;
 # /data/.socket_stream
 allow smdexe ddexe_socket:sock_file rw_file_perms;
 
+# /dev/umts_*
+allow smdexe vendor_radio_device:chr_file rw_file_perms;
+
 # ro.hardware.chipname
 get_prop(smdexe, vendor_default_prop)

@@ -1,0 +1,5 @@
+# healthd.te
+
+# /sys/devices/platform/battery/power_supply/battery/type
+allow healthd sysfs_battery:dir r_dir_perms;
+allow healthd sysfs_battery:file r_file_perms;
