@@ -2049,7 +2049,7 @@ on property:ro.debuggable=1
     start console
 
 # LPM
-service lpm /system/bin/lpm
+service lpm /system/bin/charger
     class sec-charger
     user root
     group system radio input
