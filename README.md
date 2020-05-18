@@ -1,1 +1,3 @@
-# LineageOS platform tree for the Samsung Exynos 7904
+
+
+## Samsung Exynos 7904 common tree
