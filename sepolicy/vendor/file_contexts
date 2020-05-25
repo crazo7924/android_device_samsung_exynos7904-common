@@ -18,9 +18,6 @@
 # Camera
 /dev/m2m1shot_scaler0                        u:object_r:m2m1shot_device:s0
 
-# Eden
-/dev/vertex10                                u:object_r:npu_device:s0
-
 # Geotrans
 /dev/video155                                u:object_r:geotrans_device:s0
 
@@ -50,8 +47,6 @@
 /dev/block/zram0                             u:object_r:swap_block_device:s0
 
 ### KEYDATA
-/keydata(/.*)?                               u:object_r:keydata_data_file:s0
-/keyrefuge(/.*)?                             u:object_r:keyrefuge_data_file:s0
 /omr(/.*)?                                   u:object_r:omr_file:s0
 /dqmdbg(/.*)?                                u:object_r:dqmdbg_file:s0
 
@@ -73,8 +68,8 @@
 ### VENDOR
 /(vendor|system/vendor)/bin/argosd           u:object_r:argosd_exec:s0
 /(vendor|system/vendor)/bin/cass             u:object_r:cassd_exec:s0
-/(vendor|system/vendor)/bin/epic             u:object_r:epicd_exec:s0
-
+/(vendor|system/vendor)/bin/tzdaemon	u:object_r:tzdaemon_exec:s0
+/(vendor|system/vendor)/bin/taadaemon	 u:object_r:tzdaemon_exec:s0
 /(vendor|system/vendor)/bin/vendor\.samsung\.hardware\.security\.widevine\.keyprovisioning@[0-9]\.[0-9]-service    u:object_r:hal_drm_widevine_exec:s0
 
 /(vendor|system/vendor)/bin/hw/gpsd          u:object_r:gpsd_exec:s0
